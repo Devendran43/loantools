@@ -1,0 +1,209 @@
+.card {
+  composes: glassCard from global;
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.headerText h2 {
+  margin-bottom: 0.25rem;
+}
+
+.privacyBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-teal-soft-text);
+  background: var(--color-teal-soft);
+  border-radius: var(--radius-full);
+  padding: 0.35rem 0.7rem;
+  white-space: nowrap;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem 1.75rem;
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .fullRow {
+    grid-column: 1 / -1;
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.fieldTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.inputRow {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  border: 1.5px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-elevated);
+  transition: border-color var(--duration-fast) var(--ease-out), box-shadow var(--duration-fast) var(--ease-out);
+}
+
+.inputRow:focus-within {
+  border-color: var(--color-blue);
+  box-shadow: 0 0 0 3px var(--color-blue-ring);
+}
+
+.inputRow[data-invalid="true"] {
+  border-color: var(--color-danger);
+}
+
+.inputRow[data-invalid="true"]:focus-within {
+  box-shadow: 0 0 0 3px var(--color-danger-soft);
+}
+
+.prefix {
+  display: flex;
+  align-items: center;
+  padding-inline: 0.7rem;
+  color: var(--color-text-muted);
+  font-weight: 600;
+  border-right: 1px solid var(--color-border);
+}
+
+.suffix {
+  display: flex;
+  align-items: center;
+  padding-inline: 0.7rem;
+  color: var(--color-text-muted);
+  font-weight: 600;
+  border-left: 1px solid var(--color-border);
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  padding: 0.7rem 0.75rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text);
+}
+
+.input:focus {
+  outline: none;
+}
+
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+  margin: 0;
+}
+
+.helper {
+  font-size: 0.8rem;
+  color: var(--color-text-faint);
+  min-height: 1.1em;
+}
+
+.error {
+  font-size: 0.8rem;
+  color: var(--color-danger);
+  font-weight: 500;
+  min-height: 1.1em;
+}
+
+.slider {
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: var(--radius-full);
+  background: var(--color-border-strong);
+  outline: none;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--color-blue);
+  border: 3px solid var(--color-bg-elevated);
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.3);
+  cursor: pointer;
+  transition: transform var(--duration-fast) var(--ease-out), background var(--duration-fast) var(--ease-out);
+}
+
+.slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  background: var(--color-blue-hover);
+}
+
+.slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--color-blue);
+  border: 3px solid var(--color-bg-elevated);
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.3);
+  cursor: pointer;
+}
+
+.toggleGroup {
+  display: inline-flex;
+  border: 1.5px solid var(--color-border-strong);
+  border-radius: var(--radius-full);
+  padding: 3px;
+  background: var(--color-bg-elevated);
+  gap: 2px;
+}
+
+.toggleBtn {
+  padding: 0.4rem 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  color: var(--color-text-muted);
+  transition: background var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out);
+}
+
+.toggleBtn[data-active="true"] {
+  background: var(--color-blue);
+  color: var(--color-on-brand);
+}
+
+.sectionDivider {
+  margin-block: 1.5rem;
+  border: none;
+  border-top: 1px dashed var(--color-border);
+}
+
+.optionalTag {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-text-faint);
+}

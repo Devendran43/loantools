@@ -1,0 +1,128 @@
+.card {
+  composes: glassCard from global;
+}
+
+.subhead {
+  color: var(--color-text-muted);
+  max-width: 62ch;
+  margin-bottom: 1.75rem;
+}
+
+.rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 0.7rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.rowLabel {
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.rowLabel small {
+  display: block;
+  font-size: 0.74rem;
+  color: var(--color-text-faint);
+  font-weight: 400;
+  margin-top: 0.15rem;
+}
+
+.rowValue {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.row[data-emphasis="true"] {
+  margin-block: 0.4rem;
+  padding: 0.9rem 1rem;
+  border: none;
+  border-radius: var(--radius-md);
+  background: var(--color-teal-soft);
+}
+
+.row[data-emphasis="true"] .rowValue {
+  color: var(--color-teal);
+  font-size: 1.2rem;
+}
+
+.row[data-tone="accent"] .rowValue {
+  color: var(--color-amber-strong);
+}
+
+.divider {
+  border: none;
+  border-top: 1px dashed var(--color-border);
+  margin-block: 1.75rem;
+}
+
+.summaryHero {
+  border-radius: var(--radius-md);
+  /* Sparing use of the brand gradient — see design-system note in globals.css. */
+  background: var(--gradient-hero);
+  color: var(--color-on-brand);
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  margin-bottom: 1.5rem;
+}
+
+.summaryHeroTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 1.1rem + 0.6vw, 1.6rem);
+  font-weight: 600;
+  margin-bottom: 1.1rem;
+  opacity: 0.96;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.9rem 1.2rem;
+}
+
+@media (min-width: 560px) {
+  .heroGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.heroStat {
+  min-width: 0;
+}
+
+.heroStatLabel {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  opacity: 0.75;
+  margin-bottom: 0.2rem;
+}
+
+.heroStatValue {
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 1rem + 0.4vw, 1.3rem);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.footnote {
+  font-size: 0.78rem;
+  color: var(--color-text-faint);
+  margin-top: 1rem;
+  line-height: 1.5;
+}

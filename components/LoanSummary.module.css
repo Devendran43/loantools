@@ -1,0 +1,169 @@
+.card {
+  composes: glassCard from global;
+}
+
+.top {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 760px) {
+  .top {
+    grid-template-columns: auto 1fr;
+  }
+}
+
+.chartWrap {
+  display: flex;
+  justify-content: center;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.legendDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.statGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media (min-width: 480px) {
+  .statGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.stat {
+  padding: 1rem 1.1rem;
+  border-radius: var(--radius-md);
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+}
+
+.stat[data-emphasis="true"] {
+  background: var(--color-blue-soft);
+  border-color: transparent;
+}
+
+.statLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  margin-bottom: 0.3rem;
+}
+
+.statValue {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 1rem + 0.6vw, 1.5rem);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text);
+}
+
+.statValue[data-tone="accent"] {
+  color: var(--color-amber-strong);
+}
+
+.statValue[data-tone="primary"] {
+  color: var(--color-blue);
+}
+
+.emiRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+@media (min-width: 640px) {
+  .emiRow {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.emiCard {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  padding: 1.1rem 1.25rem;
+  background: var(--color-bg-elevated);
+}
+
+.emiCardHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 0.6rem;
+}
+
+.emiCardTitle {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-faint);
+}
+
+.emiCardAmount {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 0.7rem;
+}
+
+.miniBar {
+  display: flex;
+  height: 8px;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  background: var(--color-border);
+  margin-bottom: 0.55rem;
+}
+
+.miniBarSegment {
+  height: 100%;
+  transition: width 600ms var(--ease-out);
+}
+
+.breakdownRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.breakdownRow span:first-child {
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.explainer {
+  font-size: 0.82rem;
+  color: var(--color-text-faint);
+  margin-top: 0.65rem;
+  line-height: 1.5;
+}

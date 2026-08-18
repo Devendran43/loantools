@@ -1,0 +1,25 @@
+.footer {
+  background: var(--color-footer-bg);
+  padding-block: 2rem;
+  margin-top: 1rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--color-footer-text);
+}
+
+.text {
+  font-size: 0.82rem;
+  color: var(--color-footer-text-muted);
+  max-width: 34rem;
+}

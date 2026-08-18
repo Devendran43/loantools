@@ -1,0 +1,64 @@
+.card {
+  composes: glassCard from global;
+}
+
+.subhead {
+  color: var(--color-text-muted);
+  max-width: 62ch;
+  margin-bottom: 1.75rem;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+}
+
+.step {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+}
+
+.step:last-child {
+  padding-bottom: 0;
+}
+
+.stepLine {
+  position: absolute;
+  left: 15px;
+  top: 34px;
+  bottom: 0;
+  width: 2px;
+  background: var(--color-border);
+}
+
+.step:last-child .stepLine {
+  display: none;
+}
+
+.badge {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-blue-soft);
+  color: var(--color-blue-soft-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  z-index: 1;
+}
+
+.stepText {
+  padding-top: 0.35rem;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+.stepText strong {
+  color: var(--color-blue-soft-text);
+}
