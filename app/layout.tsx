@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Inter } from "next/font/google";
-import Script from "next/script";
 import AmbientBackground from "@/components/AmbientBackground";
 import "./globals.css";
 
@@ -80,13 +79,20 @@ export default function RootLayout({
           configured (see .env.example). Without it, AdSlot renders neutral
           placeholders instead of making any third-party network request —
           nothing is sent anywhere until you deliberately turn ads on.
+
+          This is a plain HTML <script> tag, not next/script: next/script
+          never emits a literal <script src> into the server-rendered HTML
+          in the app directory (any strategy) — it only emits a preload
+          link plus a runtime-inserted tag, which AdSense's non-JS site
+          crawler can't see. A raw tag here is rendered verbatim by the
+          Server Component, matching exactly what AdSense's verification
+          step asks for.
         */}
         {ADSENSE_CLIENT_ID ? (
-          <Script
+          <script
             async
             src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID}`}
             crossOrigin="anonymous"
-            strategy="beforeInteractive"
           />
         ) : null}
       </body>
